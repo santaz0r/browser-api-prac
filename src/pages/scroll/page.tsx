@@ -9,7 +9,7 @@ export const Scroll = () => {
   return (
     <Layout>
       <h1>Scroll</h1>
-      {<PostsView />}
+      <PostsView />
     </Layout>
   );
 };
