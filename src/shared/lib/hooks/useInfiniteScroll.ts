@@ -1,13 +1,11 @@
-import { useRef, useState, useSyncExternalStore } from 'react';
+import { useRef, useSyncExternalStore } from 'react';
 
 type Props = {
   opt: IntersectionObserverInit;
-  // fetch: () => Promise<void>;
   cb: () => void;
 };
 
 export const useInfiniteScroll = ({ opt, cb }: Props) => {
-  const [isLoading, setIsLoading] = useState(false);
   const targetRef = useRef<HTMLDivElement>(null);
 
   const getSnapShot = () => {};
@@ -15,8 +13,6 @@ export const useInfiniteScroll = ({ opt, cb }: Props) => {
   const subscribe = () => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        // setIsLoading(true);
-        // fetch().finally(() => setIsLoading(false));
         observer.unobserve(entry.target);
         cb();
       }
@@ -36,5 +32,5 @@ export const useInfiniteScroll = ({ opt, cb }: Props) => {
 
   useSyncExternalStore(subscribe, getSnapShot);
 
-  return { targetRef, isLoading };
+  return { targetRef };
 };

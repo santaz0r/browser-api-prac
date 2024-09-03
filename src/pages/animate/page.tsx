@@ -3,7 +3,7 @@ import { Layout } from '../../shared/Layout/Layout';
 import styles from './styles.module.scss';
 import { useLastAnimation } from '../../shared/lib/hooks/useLastAnimation';
 import { model } from './model';
-import { useList, useUnit } from 'effector-react';
+import { useUnit } from 'effector-react';
 
 export const Animate = () => {
   return (

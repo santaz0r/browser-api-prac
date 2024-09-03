@@ -4,7 +4,7 @@ import { Post } from '../../shared/api';
 
 export const currentRoute = routes.scroll;
 
-const $currentPage = createStore<number>(1);
+const $currentPage = createStore<number>(0); // сменил на 0, т.к. при запуске приложения запрос происходил на 2 страницу
 const $posts = createStore<Post[]>([]);
 
 const getPosts = createEvent();
