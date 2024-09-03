@@ -1,0 +1,20 @@
+.content {
+  min-height: 110vh;
+}
+
+.image_section {
+  min-height: 85vh;
+  border: 1px solid violet;
+  margin-bottom: 50px;
+  .image {
+    height: 300px;
+    width: 250px;
+
+    margin: 0 auto;
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
